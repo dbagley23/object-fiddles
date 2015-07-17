@@ -260,3 +260,85 @@ function bindCard(person, cc){
     return boundCard
 }
 
+
+var allUsers = {
+    userId1: {
+        name: 'bob',
+
+    }
+}
+
+var allUsers = [
+    {name: 'bob'},
+    {name: 'sally'}
+
+]
+
+
+/* new problem to start class */
+var makeArray = function(){
+    var functions = [];
+    for(var i = 0; i < 10; i++){
+        functions.push(function(x){
+            console.log(x);
+        });
+    }
+    return functions;
+}
+var funcArr = makeArray();
+console.log(funcArr);
+
+function showArrayMembers(){
+    for(i = 0; i < funcArr.length; i++){
+        console.log(funcArr[i]);
+    }
+}
+
+funcArr.forEach(function(x, i){
+    x(i);
+});
+
+/* all that a callback function is is an argument that is passed into another function*/
+
+var foo = function(x) {
+    console.log(x);
+}
+
+var bar = function(cb) {
+    cb("hello World");
+}
+
+bar(foo);
+
+/* Callback function*/
+
+var forEach = function(arr, cb) {
+    for (var i = 0; i < arr.length; i++) {
+        cb(arr[i]);
+    }
+};
+
+forEach([1, 2, 3], function(input){
+    console.log(input);
+});
+
+/* another way to do it*/
+
+var nums = [1, 2, 3];
+
+var logger = function(input) {
+    console.log(input);
+};
+
+forEach(nums, logger);
+
+/* shows asynchronos */
+console.log('hi');
+setTimeout(function(){
+    console.log('sup');
+}, 500);
+
+console.log('there');
+
+http://www.underscorejs.org
+
